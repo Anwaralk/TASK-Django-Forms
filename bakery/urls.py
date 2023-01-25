@@ -18,7 +18,11 @@ from django.urls import path
 
 from stores import views as store_views
 
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("items/", store_views.get_store_items, name="store-item-list"),
+    path("create-store-item/", store_views.create_store_item, name="create-store-item"),
+    path('item/<int: item_id>/update/', store_views.update_store_item, name= "update-store-item" ),
+    path('item/<int: item_id>/delete/', store_views.delete_store_item, anme= "delete-store-item" ),
 ]
